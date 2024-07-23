@@ -185,43 +185,52 @@ ul.symptom-list li::before {
 }
 /* FAQ Section Styles */
 .faq-section {
-    background-color: #f8f9fa; /* Light background color */
-    border: 1px solid #ddd; /* Light border for definition */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Space around the content */
-    margin: 20px 0; /* Space above and below the section */
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
 }
 
 .faq-section h2 {
-    font-size: 24px; /* Adjust heading size */
-    color: #007bff; /* Color for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-    text-align: center; /* Center-align the heading */
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .faq {
-    margin-bottom: 15px; /* Space between FAQ items */
+    margin-bottom: 15px;
 }
 
 .faq h3 {
-    font-size: 18px; /* Adjust question size */
-    color: #333; /* Color for the questions */
-    cursor: pointer; /* Change cursor to pointer */
-    margin-bottom: 5px; /* Space below the question */
-    transition: color 0.3s ease; /* Smooth transition for color */
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
 }
 
 .faq p {
-    font-size: 16px; /* Adjust answer size */
-    color: #555; /* Color for the answers */
-    margin: 0; /* Remove default margin */
-    display: none; /* Hide answers initially */
-    transition: all 0.3s ease; /* Smooth transition for display */
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .faq h3:hover {
-    color: #007bff; /* Change question color on hover */
+    color: #007bff;
 }
+
+.faq.open p {
+    display: block;
+    max-height: 200px; /* Adjust based on the content length */
+    padding: 10px 0;
+}
+
  </style>
 
 <script>
@@ -678,7 +687,7 @@ document.addEventListener('DOMContentLoaded', function() {
        <center> <button type="submit" id="submit-button" class="call-to-action-button" onclick="gtag_report_conversion();">GET MY PACK NOW</button> </center>
      </div>
   </form>  
-<div class="faq-section">
+<section class="faq-section">
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
         <h3>Is Prostate Well a permanent treatment?</h3>
@@ -696,7 +705,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <h3>How many capsules are in a bottle?</h3>
         <p>Each bottle contains 60 capsules, designed to last for 15 days.</p>
     </div>
-</div>
+</section>
 
 <h3 class="definition"><center>Here's why our treatment stands out from the rest:</h3></center>
   <li><b>✅ Proven Results - Backed by Research:</b> Our treatment has been specifically designed to target the root causes of prostate issues.
